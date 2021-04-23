@@ -1,6 +1,8 @@
 import itertools
 import copy
 import os
+from termcolor import colored
+
 
 
 
@@ -12,20 +14,6 @@ class Board:
         self.board = board
     
     def __str__(self):
-        rep = []
-        for row in self.board:
-            row_str = []
-            for el in row:
-                if el == 0:
-                    row_str.append(' ')
-                elif el == 1: #represents xs
-                    row_str.append('x')
-                elif el == 2:#represents os
-                    row_str.append('o')
-            rep.append('|'.join(row_str))
-            
-            
-            
         new = []
         new.append("  1   2   3   4   5   6   7 \n")
         new.append("  -   -   -   -   -   -   - \n")
@@ -36,9 +24,9 @@ class Board:
                 if self.board[i][j] == 0: #empty place
                     new.append('| '+ '  ')
                 elif self.board[i][j] == 1: #X
-                    new.append('| ' + 'X ')
+                    new.append('| ' + colored('X', 'red')+' ')
                 elif self.board[i][j] == 2: #O
-                    new.append('| ' + 'O ')
+                    new.append('| ' + colored('O', 'blue')+' ')
                 else:
                     print('deu ruim')
             new.append('|\t' + str(i+1) + ' '+ '\n')
