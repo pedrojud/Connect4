@@ -287,6 +287,7 @@ def checkWinner(board):
 def main():
     game_going = True
     print('Welcome to Connect 4! You will play with Xs')
+    name = input('Whats your name?')
     whoStart = input('Do you want to start? (y/n)').lower()
     while whoStart != 'y' and whoStart != 'n':
         whoStart = input("Please enter a valid 'y' or 'n' to choose who starts").lower()
@@ -307,6 +308,8 @@ def main():
     
     
     printBoard(board)
+    print('Current Level: %d'%(dif))
+    print('Player name:%s'%(name))
     #Game starts
     while(game_going):
         if boardFilled(board):
@@ -325,6 +328,8 @@ def main():
                 new_board = realPlayerMove(board, column)
             board = new_board
             printBoard(board)
+            print('Current Level: %d'%(dif))
+            print('Player name:%s'%(name))
 
             win = checkWinner(board)
             if not win:
@@ -338,10 +343,14 @@ def main():
             if not next_mv: #means AI will lose because no optimal move
                 next_board = list(getNextMoves(board, 2))[0]
                 printBoard(next_board)
-                print('Congrats, YOU WON!')
+                print('Current Level: %d'%(dif))
+                print('Player name:%s'%(name))
+                print('Congrats, YOU WON %s!'%(name))
                 break
             board = next_mv
             printBoard(board)
+            print('Current Level: %d'%(dif))
+            print('Player name:%s'%(name))
             win = checkWinner(board)
             if not win:
                 currentTurn = True
