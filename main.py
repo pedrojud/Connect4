@@ -296,7 +296,7 @@ def main():
     
     printBoard(board)
     print('Current Level: %d'%(dif))
-    print('Player name:%s'%(name))
+    print('Player name: %s'%(name))
     #Game starts
     while(game_going):
         if boardFilled(board):
@@ -316,7 +316,7 @@ def main():
             board = new_board
             printBoard(board)
             print('Current Level: %d'%(dif))
-            print('Player name:%s'%(name))
+            print('Player name: %s'%(name))
 
             win = checkWinner(board)
             if not win:
@@ -331,13 +331,13 @@ def main():
                 next_board = list(getNextMoves(board, 2))[0]
                 printBoard(next_board)
                 print('Current Level: %d'%(dif))
-                print('Player name:%s'%(name))
+                print('Player name: %s'%(name))
                 print('Congrats, YOU WON %s!'%(name))
                 break
             board = next_mv
             printBoard(board)
             print('Current Level: %d'%(dif))
-            print('Player name:%s'%(name))
+            print('Player name: %s'%(name))
             win = checkWinner(board)
             if not win:
                 currentTurn = True
