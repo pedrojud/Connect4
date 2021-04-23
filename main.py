@@ -1,4 +1,3 @@
-import itertools
 import copy
 import os
 from termcolor import colored
